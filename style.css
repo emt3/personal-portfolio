@@ -201,13 +201,30 @@ body {
     overflow: hidden;
     text-align: center;
     color: #10132E;
-    background-color: #DFC9E8;
-    background-image:
-        radial-gradient(ellipse 75% 77% at 82% 18%, rgba(52,92,245,.78) 0%, rgba(52,92,245,.46) 28%, transparent 78%),
-        radial-gradient(ellipse 85% 85% at 20% 66%, rgba(235,50,195,.52) 0%, rgba(235,50,195,.31) 36%, transparent 83%),
-        radial-gradient(ellipse 90% 75% at 53% 90%, rgba(221,223,238,.48) 0%, transparent 78%),
-        #DFC9E8;
+
+background-color: #DFC9E8;
+
+background-image:
+    radial-gradient(
+        ellipse 75% 77% at 82% 18%,
+        rgba(52, 92, 245, 0.78) 0%,
+        rgba(52, 92, 245, 0.46) 28%,
+        transparent 78%
+    ),
+    radial-gradient(
+        ellipse 85% 85% at 20% 66%,
+        rgba(235, 50, 195, 0.52) 0%,
+        rgba(235, 50, 195, 0.31) 36%,
+        transparent 83%
+    ),
+    radial-gradient(
+        ellipse 90% 75% at 53% 90%,
+        rgba(221, 223, 238, 0.48) 0%,
+        transparent 78%
+    );
+
 }
+
 .hero::before {
     content: "";
     position: absolute;
