@@ -481,122 +481,248 @@ section {
    ============================================= */
 
 
+
 /* ============================================
-   7. SKILLS
-   ============================================= */
+   7. ELECTRIC BLOOM — SKILLS & TECHNOLOGIES
+   ============================================ */
+
+.skills {
+    padding: 120px 0;
+    background: #E7E8F2;
+    color: var(--cosmic-ink);
+}
+
+/* Section heading */
+
+.skills-heading {
+    margin-bottom: 52px;
+}
+
+.skills-eyebrow {
+    margin: 0 0 16px;
+    color: var(--digital-iris);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.skills-title {
+    margin: 0;
+    color: var(--cosmic-ink);
+    font-size: clamp(40px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.055em;
+}
+
+.skills-title span {
+    color: var(--digital-iris);
+}
+
+.skills-intro {
+    max-width: 580px;
+    margin: 22px 0 0;
+    color: #555B76;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ============================================
+   VERTICAL STACK OF HORIZONTAL CARDS
+   ============================================ */
+
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 28px;
 }
 
-/* Each skill card */
+/* Full-width rectangular cards */
+
 .skill-category {
-    background: var(--bg-card);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-primary);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    min-width: 0;
+    min-height: 190px;
+    padding: 36px 40px;
+
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.88);
+    border-radius: 24px;
+
+    box-shadow: 0 6px 26px rgba(16, 19, 46, 0.035);
+
+    transition:
+        transform 250ms ease,
+        box-shadow 250ms ease,
+        border-color 250ms ease;
 }
 
 .skill-category:hover {
-    transform: translateY(-3px);
-    background: var(--bg-card-hover);
-    border-color: var(--border-secondary);
-    box-shadow: var(--shadow-xl), 0 0 30px color-mix(in srgb, var(--accent-primary) 10%, transparent);
+    transform: translateY(-5px);
+    border-color: rgba(52, 92, 245, 0.28);
+    box-shadow: 0 18px 42px rgba(16, 19, 46, 0.09);
 }
 
-/* Colored line that slides in along the top of the card on hover */
-.skill-category::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
+/* ============================================
+   ICON + TITLE — HORIZONTAL ALIGNMENT
+   ============================================ */
 
-.skill-category:hover::before {
-    transform: scaleX(1);
-}
-
-.skill-header {
+.skill-card-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 20px;
+    margin-bottom: 28px;
 }
 
-/* The icon in the colored square */
-.skill-header .icon {
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    border-radius: 8px;
-    color: var(--text-primary);
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
-}
+.skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-/* Icon "draws itself" when you hover the card */
-.skill-header .icon > * {
-    stroke-dasharray: 100;
-}
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
 
-.skill-category:hover .skill-header .icon > * {
-    animation: draw 1.2s ease forwards;
-}
+    background: rgba(52, 92, 245, 0.09);
+    border: 1px solid rgba(52, 92, 245, 0.10);
+    border-radius: 14px;
 
-@keyframes draw {
-    from { stroke-dashoffset: 100; }
-    to   { stroke-dashoffset: 0; }
-}
-
-.skill-header h3 {
-    font-size: 1.2rem;
+    color: var(--digital-iris);
+    font-size: 23px;
     font-weight: 600;
-    color: var(--text-primary);
 }
+
+.skill-card-header h3 {
+    margin: 0;
+    color: var(--cosmic-ink);
+    font-size: 22px;
+    font-weight: 650;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+}
+
+/* ============================================
+   SKILL TAGS
+   ============================================ */
 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
-/* Each little skill pill */
-.skill-tag {
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+.skill-tags span {
+    padding: 9px 15px;
+
+    background: rgba(52, 92, 245, 0.065);
+    border: 1px solid rgba(52, 92, 245, 0.10);
+    border-radius: 999px;
+
+    color: #2849B8;
+    font-size: 13px;
     font-weight: 500;
-    border: 1px solid var(--border-primary);
-    transition: all 0.3s ease;
+    line-height: 1.3;
+
+    transition:
+        background 250ms ease,
+        border-color 250ms ease;
 }
 
-.skill-tag:hover {
-    background: var(--accent-primary);
-    color: var(--bg-secondary);
-    border-color: var(--accent-primary);
-    transform: translateY(-1px);
+.skill-tags span:hover {
+    background: rgba(52, 92, 245, 0.12);
+    border-color: rgba(52, 92, 245, 0.25);
 }
 
-/* Tags do a "wave" when you hover the card: each one waits a bit longer */
-.skill-category:hover .skill-tag { animation: hop 0.5s ease; }
-.skill-category:hover .skill-tag:nth-child(2) { animation-delay: 0.07s; }
-.skill-category:hover .skill-tag:nth-child(3) { animation-delay: 0.14s; }
-.skill-category:hover .skill-tag:nth-child(4) { animation-delay: 0.21s; }
-.skill-category:hover .skill-tag:nth-child(5) { animation-delay: 0.28s; }
-.skill-category:hover .skill-tag:nth-child(6) { animation-delay: 0.35s; }
+/* ============================================
+   DARK MODE
+   ============================================ */
 
-@keyframes hop {
-    50% { transform: translateY(-8px); }
+.dark .skills {
+    background: #191D3B;
+}
+
+.dark .skills-title,
+.dark .skill-card-header h3 {
+    color: #F7F5FF;
+}
+
+.dark .skills-intro {
+    color: #D5D5E8;
+}
+
+.dark .skill-category {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .skill-tags span {
+    color: #C5CFFF;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 900px) {
+    .skill-category {
+        padding: 30px;
+    }
+
+    .skill-card-header h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills {
+        padding: 80px 0;
+    }
+
+    .skills-heading {
+        margin-bottom: 36px;
+    }
+
+    .skills-grid {
+        gap: 18px;
+    }
+
+    .skill-category {
+        min-height: auto;
+        padding: 28px;
+    }
+
+    .skill-card-header {
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-category {
+        padding: 24px;
+    }
+
+    .skill-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .skill-card-header h3 {
+        font-size: 18px;
+    }
+
+    .skills-intro {
+        font-size: 15px;
+    }
+
+    .skill-tags {
+        gap: 8px;
+    }
+
+    .skill-tags span {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
 }
 
 
@@ -1067,7 +1193,7 @@ section {
         padding: 60px 0;
     }
     
-    
+
     .skill-category,
     .contact-card {
         padding: 1.5rem;
