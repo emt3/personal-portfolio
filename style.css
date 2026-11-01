@@ -342,6 +342,66 @@ background-image:
 
 
 /* ============================================
+   ELECTRIC BLOOM — DARK MODE HERO
+   Midnight Orchid gradient
+   ============================================ */
+
+.dark .hero {
+    color: #F7F5FF;
+    background-color: #10132E;
+
+    background-image:
+        radial-gradient(
+            ellipse 75% 77% at 82% 18%,
+            rgba(52, 92, 245, 0.55) 0%,
+            rgba(52, 92, 245, 0.22) 35%,
+            transparent 78%
+        ),
+        radial-gradient(
+            ellipse 85% 85% at 20% 66%,
+            rgba(235, 50, 195, 0.36) 0%,
+            rgba(235, 50, 195, 0.15) 36%,
+            transparent 83%
+        ),
+        radial-gradient(
+            ellipse 90% 75% at 53% 90%,
+            rgba(92, 77, 154, 0.22) 0%,
+            transparent 78%
+        );
+}
+
+.dark .hero::before {
+    background: radial-gradient(
+        ellipse 70% 80% at 52% 49%,
+        rgba(255, 255, 255, 0.035),
+        transparent 75%
+    );
+}
+
+.dark .hero-eyebrow,
+.dark .hero-title,
+.dark .hero-subtitle,
+.dark .scroll-down {
+    color: #F7F5FF;
+}
+
+.dark .hero-title-iris {
+    color: #A5B5FF;
+}
+
+.dark .hero-cta-glass {
+    color: #F7F5FF;
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.dark .hero-cta-glass:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+
+
+/* ============================================
    4. BUTTONS & ICONS
    ============================================= */
 .btn {
