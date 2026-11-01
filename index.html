@@ -41,7 +41,7 @@
     <title>Emily Tymafichuk - Personal Portfolio</title>
 
     <!-- ✏️ EDIT: A one-line summary of you (shows up in Google search results) -->
-    <meta name="description" content="Short one-line description of who you are and what you do.">
+    <meta name="description" content="Emily Tymafichuk — computing science, creativity, and everything in between.">
 
     <!-- Connects this page to your styles and font. Don't change these. -->
     <link rel="stylesheet" href="style.css">
@@ -51,86 +51,60 @@
 <!-- Everything inside <body> is what visitors actually see -->
 <body>
 
-    <!-- Background dots effect that follows the mouse (styled in style.css) -->
-    <div class="bg-dots"></div>
-
 
     <!-- ============================================
          1. NAVIGATION BAR
          The menu that stays at the top of the screen.
     ============================================= -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
         <div class="nav-container">
-
-            <!-- ✏️ EDIT: Your name in the top-left corner -->
-            <a href="#" class="nav-logo">Emily Tymafichuk</a>
-
-            <!-- Menu links. Each href="#something" jumps to the section
-                 with id="something" further down the page. -->
+            <a href="#hero" class="nav-logo" aria-label="Back to home">/* et */</a>
             <div class="nav-menu" id="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#writing" class="nav-link">Writing</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <!-- ✏️ LIGHT/DARK MODE BUTTON: we'll write this together 
-                 The sun/moon circle in the navbar.
-                 - Shows a sun in dark mode and a moon in light mode (handled in style.css)
-                 - What happens when you click it is written in script.js
-                 - The id="theme-toggle" is how script.js finds this button 
-                 - Icons: 𖤓 (sun, class="sun-icon") and ☾ (moon, class="moon-icon") -->
-            
-            <!-- ✏️ Type the button here -->
-             <button id = "theme-toggle" class = "theme-toggle">
-                <span class="sun-icon"> 𖤓 </span>
-                <span class="moon-icon"> ☾ </span>
-             </button>
-
-
-            <!-- The "hamburger" menu button (three lines) that only shows on phones -->
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                    <span class="sun-icon" aria-hidden="true">☀</span>
+                    <span class="moon-icon" aria-hidden="true">☾</span>
+                </button>
+                <button id="nav-toggle" class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
             </div>
-
         </div>
     </nav>
 
 
     <!-- ============================================
-         2. HERO SECTION
-         The big welcome area. It's the first thing visitors see.
+         2. ELECTRIC BLOOM — WHISPERING ORCHID HERO
     ============================================= -->
-    <section class="hero" id="hero">
-
-        <!-- The bouncing arrow at the bottom. Clicking it scrolls to About Me. -->
-        <a href="#about" class="scroll-down">↓</a>
-
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
         <div class="hero-container">
-            <!-- The small glowing line above your name -->
-            <div class="hero-accent"></div>
-
-            <!-- ✏️ EDIT: Your name -->
-            <h1 class="hero-title">Emily Tymafichuk</h1>
-
-            <!-- ✏️ EDIT: A short line about who you are -->
-            <p class="hero-subtitle">Software Engineer</p>
-
+            <p class="hero-eyebrow">HELLO, I'M EMILY TYMAFICHUK</p>
+            <h1 class="hero-title" id="hero-heading">
+                <span class="hero-title-line">Always <em>curious.</em></span>
+                <span class="hero-title-line hero-title-iris">Always <em>creating.</em></span>
+            </h1>
+            <p class="hero-subtitle">Computing science, creativity, and everything in between.</p>
             <div class="hero-buttons">
-                <!-- This button scrolls down to your projects -->
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-
-                <!-- ✏️ EDIT: Replace "your-username" with your GitHub username -->
-                <a href="https://github.com/emt3" target="_blank" class="btn btn-secondary">
-                    <!-- GitHub icon -->
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                    GitHub Profile
+                <a class="hero-cta hero-cta-primary" href="#projects">
+                    Explore my work
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+                <a class="hero-cta hero-cta-glass" href="#about">
+                    Get to know me
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
                 </a>
             </div>
         </div>
+        <a class="scroll-down" href="#projects" aria-label="Scroll to featured projects">
+            <span>SCROLL TO EXPLORE</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16m-6-6 6 6 6-6"/></svg>
+        </a>
     </section>
 
 
