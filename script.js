@@ -72,8 +72,21 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 }
 const footerYear = document.getElementById("footer-year");
 if (footerYear) footerYear.textContent = new Date().getFullYear();
-const backToTop = document.getElementById("back-to-top");
-if (backToTop) {
-    window.addEventListener("scroll", () => backToTop.classList.toggle("show", window.scrollY > 400), { passive: true });
-    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+
+/* ============================================
+   FOOTER — BACK TO TOP
+   ============================================ */
+
+const footerBackToTop = document.querySelector(".footer-top-link");
+
+if (footerBackToTop) {
+    footerBackToTop.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 }

@@ -1048,126 +1048,738 @@ section {
 
 
 
+
 /* ============================================
-   9. CONTACT
-   ============================================= */
-.contact-card {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 3rem;
-    background: var(--bg-card);
-    border-radius: 12px;
-    border: 1px solid var(--border-primary);
-    box-shadow: var(--shadow-lg);
+   8. ELECTRIC BLOOM — GET IN TOUCH
+   Electric Haze gradient / Statement Finale
+   ============================================ */
+
+.contact {
+    position: relative;
+    padding: 112px 0 112px;
+    color: #10132E;
+    background-color: #DDDFEE;
+    background-image: linear-gradient(
+        135deg,
+        #DDDFEE 0%,
+        #E7B5E6 33%,
+        #9A8DF7 67%,
+        #345CF5 100%
+    );
 }
 
-.contact-card h3 {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: var(--text-primary);
+.contact-container {
+    position: relative;
+    z-index: 1;
 }
+
+.contact-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.contact-title {
+    margin: 0;
+    color: #10132E;
+    font-size: clamp(46px, 7vw, 88px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.06em;
+}
+
+.contact-eyebrow {
+    padding-top: 14px;
+    color: #10132E;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+}
+
+.contact-intro {
+    max-width: 900px;
+    margin: 100px auto 0;
+    text-align: center;
+}
+
+.contact-statement {
+    margin: 0;
+    color: #10132E;
+    font-size: clamp(36px, 5.5vw, 70px);
+    font-weight: 700;
+    line-height: 1.13;
+    letter-spacing: -0.055em;
+}
+
+.contact-statement em {
+    font-style: italic;
+    font-weight: inherit;
+}
+
+.contact-subtitle {
+    margin: 48px 0 0;
+    color: #10132E;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Four stacked glass contact cards */
 
 .contact-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 12px;
+    width: 100%;
+    max-width: 520px;
+    margin: 34px auto 0;
 }
 
-/* Each row (Email, GitHub, LinkedIn, Resume) */
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: var(--bg-tertiary);
-    border-radius: 8px;
-    border: 1px solid var(--border-primary);
-    transition: all 0.3s ease;
+    gap: 16px;
+    width: 100%;
+    min-height: 78px;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.42);
+    box-shadow: 0 6px 22px rgba(16, 19, 46, 0.035);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #10132E;
+    text-decoration: none;
+    transition:
+        transform 250ms ease,
+        background-color 250ms ease,
+        border-color 250ms ease,
+        box-shadow 250ms ease;
 }
 
 .contact-item:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-secondary);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.58);
+    border-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 14px 32px rgba(16, 19, 46, 0.10);
 }
 
-/* The icon in the colored square on the left */
+.contact-item:focus-visible {
+    outline: 3px solid #345CF5;
+    outline-offset: 4px;
+}
+
 .contact-icon {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
     display: flex;
+    flex: 0 0 44px;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #EB32C3;
+    color: #FFFFFF;
 }
 
-.contact-icon .icon {
-    color: var(--text-primary);
+.contact-icon svg {
+    display: block;
+    width: 22px;
+    height: 22px;
 }
 
-/* Icon gives a little shake when you hover its row */
-.contact-item:hover .contact-icon {
-    animation: wiggle 0.5s ease;
-}
-
-@keyframes wiggle {
-    25% { transform: rotate(-12deg); }
-    75% { transform: rotate(12deg); }
-}
-
-/* Takes up the middle space so the arrow sits on the far right */
 .contact-info {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
 }
 
-.contact-info h4 {
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: var(--text-primary);
+.contact-info strong {
+    color: #10132E;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-.contact-info p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
+.contact-info > span {
+    color: #343957;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
 }
 
-/* The arrow link on the right */
-.contact-link {
-    padding: 0.5rem;
-    border-radius: 4px;
-    color: var(--text-muted);
-    transition: all 0.3s ease;
+.contact-arrow {
+    flex-shrink: 0;
+    width: 21px;
+    height: 21px;
+    color: #10132E;
+    transition: transform 250ms ease;
 }
 
-.contact-link:hover {
-    color: var(--accent-tertiary);
-    background: var(--bg-card);
+.contact-item:hover .contact-arrow {
+    transform: translate(3px, -3px);
 }
 
 
 /* ============================================
-   10. FOOTER
-   ============================================= */
+   9. ELECTRIC BLOOM — FOOTER
+   Cosmic Ink / Editorial two-row layout
+   ============================================ */
+
 .footer {
-    padding: 2rem 0;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-primary);
+    padding: 56px 0;
+    background: #10132E;
+    color: #FFFFFF;
 }
 
 .footer-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
 }
 
-.footer-text {
-    color: var(--text-muted);
-    font-size: 0.9rem;
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.footer-logo {
+    color: #FFFFFF;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.footer-top-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1px solid #DFC9E8;
+    border-radius: 999px;
+    color: #DFC9E8;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background-color 250ms ease,
+        color 250ms ease,
+        transform 250ms ease;
+}
+
+.footer-top-link svg {
+    width: 17px;
+    height: 17px;
+    transition: transform 250ms ease;
+}
+
+.footer-top-link:hover {
+    background: rgba(223, 201, 232, 0.12);
+    transform: translateY(-2px);
+}
+
+.footer-top-link:hover svg {
+    transform: translate(2px, -2px);
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    margin: 36px 0 28px;
+    background: #343752;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-copyright {
+    margin: 0;
+    color: #A9ABC5;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer-signoff {
+    margin: 0;
+    color: #DFC9E8;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+
+/* ============================================
+   DARK MODE — CONTACT
+   ============================================ */
+
+.dark .contact {
+    color: #F7F5FF;
+    background-color: #10132E;
+    background-image: linear-gradient(
+        135deg,
+        #171A38 0%,
+        #432451 33%,
+        #343A87 67%,
+        #172B78 100%
+    );
+}
+
+.dark .contact-title,
+.dark .contact-eyebrow,
+.dark .contact-statement,
+.dark .contact-subtitle {
+    color: #F7F5FF;
+}
+
+.dark .contact-item {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.22);
+    color: #F7F5FF;
+}
+
+.dark .contact-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.dark .contact-info strong,
+.dark .contact-arrow {
+    color: #F7F5FF;
+}
+
+.dark .contact-info > span {
+    color: #E0DFF0;
+}
+
+
+/* ============================================
+   RESPONSIVE — CONTACT & FOOTER
+   ============================================ */
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 80px 0 90px;
+    }
+
+    .contact-heading {
+        gap: 14px;
+    }
+
+    .contact-title {
+        font-size: clamp(40px, 8vw, 62px);
+    }
+
+    .contact-eyebrow {
+        padding-top: 10px;
+        font-size: 10px;
+    }
+
+    .contact-intro {
+        margin-top: 75px;
+    }
+
+    .contact-statement {
+        font-size: clamp(34px, 7vw, 52px);
+    }
+
+    .contact-subtitle {
+        margin-top: 36px;
+    }
+
+    .footer {
+        padding: 44px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        padding: 70px 0 85px;
+    }
+
+    .contact-heading {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-eyebrow {
+        padding-top: 0;
+    }
+
+    .contact-intro {
+        margin-top: 60px;
+    }
+
+    .contact-statement {
+        font-size: clamp(32px, 8vw, 42px);
+    }
+
+    .contact-subtitle {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+
+    .contact-list {
+        margin-top: 28px;
+    }
+
+    .contact-item {
+        min-height: 74px;
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .contact-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .footer-logo {
+        font-size: 23px;
+    }
+
+    .footer-top-link {
+        padding: 0 14px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-item,
+    .contact-arrow,
+    .footer-top-link,
+    .footer-top-link svg {
+        transition: none;
+    }
+}
+
+
+/* ============================================
+   ELECTRIC BLOOM — COMPACT CONTACT SIZING
+   ============================================ */
+
+.contact {
+    padding: 72px 0;
+}
+
+.contact-title {
+    font-size: clamp(40px, 5.5vw, 64px);
+}
+
+.contact-intro {
+    margin-top: 56px;
+}
+
+.contact-statement {
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+}
+
+.contact-subtitle {
+    margin-top: 24px;
+    font-size: 16px;
+}
+
+.contact-list {
+    margin-top: 24px;
+    gap: 10px;
+}
+
+.contact-item {
+    min-height: 68px;
+    padding: 10px 16px;
+}
+
+/* Tablet sizing */
+@media (max-width: 768px) {
+    .contact {
+        padding: 64px 0;
+    }
+
+    .contact-intro {
+        margin-top: 44px;
+    }
+}
+
+/* Mobile sizing */
+@media (max-width: 480px) {
+    .contact {
+        padding: 56px 0;
+    }
+
+    .contact-intro {
+        margin-top: 36px;
+    }
+
+    .contact-statement {
+    font-size: clamp(20px, 5vw, 24px);
+    }
+
+    .contact-item {
+        min-height: 68px;
+        padding: 10px 14px;
+    }
+}
+
+
+/* ============================================
+   ELECTRIC BLOOM — COMPACT PROJECTS & SKILLS
+   ============================================ */
+
+/* Featured Projects */
+
+.projects {
+    padding-top: 76px;
+    padding-bottom: 76px;
+}
+
+.projects-heading {
+    margin-bottom: 36px;
+}
+
+.projects-title {
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+}
+
+.projects-intro {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.projects-grid {
+    gap: 18px;
+}
+
+.project-card {
+    padding: 26px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+/* Skills & Technologies */
+
+.skills {
+    padding-top: 76px;
+    padding-bottom: 76px;
+}
+
+.skills-heading {
+    margin-bottom: 36px;
+}
+
+.skills-title {
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+}
+
+.skills-intro {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.skills-grid {
+    gap: 16px;
+}
+
+.skill-category {
+    min-height: auto;
+    padding: 24px 28px;
+}
+
+.skill-card-header {
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.skill-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+}
+
+.skill-card-header h3 {
+    font-size: 19px;
+}
+
+.skill-tags {
+    gap: 8px;
+}
+
+.skill-tags span {
+    padding: 7px 12px;
+    font-size: 12px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+    .projects,
+    .skills {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .projects-title,
+    .skills-title {
+        font-size: clamp(34px, 6vw, 46px);
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+    .skill-category {
+        padding: 22px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .projects,
+    .skills {
+        padding-top: 52px;
+        padding-bottom: 52px;
+    }
+
+    .projects-title,
+    .skills-title {
+        font-size: clamp(32px, 8vw, 40px);
+    }
+
+    .projects-heading,
+    .skills-heading {
+        margin-bottom: 28px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .skill-category {
+        padding: 20px;
+    }
+
+    .skill-card-header h3 {
+        font-size: 17px;
+    }
+}
+
+
+
+/* ============================================
+   ELECTRIC BLOOM — SECTION COUNTER ALIGNMENT
+   ============================================ */
+
+/* Position section heading and counter side by side */
+
+.projects-heading,
+.skills-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* Keep title and description together */
+
+.projects-heading-content,
+.skills-heading-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Top-right counters */
+
+.projects-eyebrow,
+.skills-eyebrow {
+    flex-shrink: 0;
+    margin: 0;
+    padding-top: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-align: right;
+}
+
+/* Responsive alignment */
+
+@media (max-width: 768px) {
+    .projects-heading,
+    .skills-heading {
+        gap: 14px;
+    }
+
+    .projects-eyebrow,
+    .skills-eyebrow {
+        padding-top: 9px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-heading,
+    .skills-heading {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .projects-eyebrow,
+    .skills-eyebrow {
+        padding-top: 0;
+        text-align: left;
+    }
+}
+
+/* ============================================
+   ELECTRIC BLOOM — MINIMAL SECTION COUNTERS
+   ============================================ */
+
+.projects-eyebrow,
+.skills-eyebrow {
+    color: #10132E;
+}
+
+/* Maintain readability in dark mode */
+.dark .projects-eyebrow,
+.dark .skills-eyebrow {
+    color: #F7F5FF;
 }
 
 
