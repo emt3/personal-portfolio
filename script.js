@@ -90,3 +90,47 @@ if (footerBackToTop) {
         });
     });
 }
+
+
+/* ============================================
+   ELECTRIC BLOOM — AURORA SCROLL MOTION
+   ============================================ */
+
+const auroraMotion = {
+    current: 0,
+    target: 0,
+    frame: null
+};
+
+function updateAuroraMotion() {
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) {
+        document.body.style.setProperty("--aurora-scroll", "0px");
+        return;
+    }
+
+    auroraMotion.target = window.scrollY * 0.025;
+
+    auroraMotion.current +=
+        (auroraMotion.target - auroraMotion.current) * 0.06;
+
+    document.body.style.setProperty(
+        "--aurora-scroll",
+        `${auroraMotion.current.toFixed(2)}px`
+    );
+
+    if (Math.abs(auroraMotion.target - auroraMotion.current) > 0.1) {
+        auroraMotion.frame = requestAnimationFrame(updateAuroraMotion);
+    } else {
+        auroraMotion.frame = null;
+    }
+}
+
+window.addEventListener("scroll", () => {
+    if (auroraMotion.frame === null) {
+        auroraMotion.frame = requestAnimationFrame(updateAuroraMotion);
+    }
+}, { passive: true });
