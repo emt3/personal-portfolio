@@ -1911,3 +1911,366 @@ section {
         scroll-behavior: auto !important;
     }
 }
+
+
+
+
+/* ============================================
+   ELECTRIC BLOOM — WRITING SECTION
+   ============================================ */
+
+.writing {
+    background: #E9E6F1;
+    padding: 76px 0;
+}
+
+/* Section heading and counter */
+
+.writing-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.writing-title {
+    margin: 0;
+    color: #10132E;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+}
+
+.writing-eyebrow {
+    color: #10132E;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    line-height: 1.5;
+    padding-top: 12px;
+}
+
+/* Editorial two-column layout */
+
+.writing-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 64px;
+}
+
+/* Publication title */
+
+.writing-publication-title {
+    margin: 0;
+    color: #10132E;
+    font-size: clamp(36px, 4.5vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+}
+
+.writing-publication-title em {
+    font-style: italic;
+    font-weight: inherit;
+}
+
+/* Description and button */
+
+.writing-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.writing-description {
+    margin: 0;
+    color: #10132E;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    max-width: 480px;
+}
+
+.writing-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 50px;
+    padding: 0 26px;
+    border-radius: 999px;
+
+    background: #345CF5;
+    color: #FFFFFF;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+
+    transition: background 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.writing-button:hover {
+    background: #2447D8;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(52, 92, 245, 0.2);
+}
+
+.writing-button span {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.writing-button:hover span {
+    transform: translate(2px, -2px);
+}
+
+.writing-button:focus-visible {
+    outline: 3px solid #10132E;
+    outline-offset: 4px;
+}
+
+/* Dark mode */
+
+.dark .writing {
+    background: #1B1D3B;
+}
+
+.dark .writing-title,
+.dark .writing-eyebrow,
+.dark .writing-publication-title,
+.dark .writing-description {
+    color: #F7F5FF;
+}
+
+.dark .writing-button {
+    background: #5575FF;
+    color: #FFFFFF;
+}
+
+.dark .writing-button:hover {
+    background: #345CF5;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 768px) {
+    .writing {
+        padding: 64px 0;
+    }
+
+    .writing-heading {
+        margin-bottom: 36px;
+    }
+
+    .writing-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .writing-publication-title {
+        font-size: clamp(34px, 7vw, 52px);
+    }
+
+    .writing-eyebrow {
+        font-size: 10px;
+        padding-top: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .writing {
+        padding: 56px 0;
+    }
+
+    .writing-heading {
+        margin-bottom: 30px;
+    }
+
+    .writing-description {
+        font-size: 15px;
+    }
+
+    .writing-details {
+        gap: 20px;
+    }
+
+    .writing-button {
+        min-height: 48px;
+        padding: 0 24px;
+    }
+}
+
+/* Writing section — book icon sizing */
+.writing-card-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.writing-card-icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+
+
+/* ============================================
+   WRITING — FLOATING EDITORIAL CARD
+   ============================================ */
+
+/* Main floating card */
+.writing-card {
+    background: #FFFFFF;
+    border: 1px solid #E3DDEA;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 12px 36px rgba(16, 19, 46, 0.06);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Subtle floating hover effect */
+.writing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 44px rgba(16, 19, 46, 0.10);
+}
+
+/* Book icon positioned in top-right corner */
+.writing-card-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.writing-card-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #F1EFFB;
+    color: #345CF5;
+    border-radius: 50%;
+}
+
+.writing-card-icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* Two-column editorial layout */
+.writing-card-content {
+    display: grid;
+    grid-template-columns: 45% minmax(0, 1fr);
+    align-items: start;
+    gap: 40px;
+}
+
+/* Keep publication title vertically centered */
+.writing-publication {
+    display: flex;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .writing-card {
+        padding: 28px;
+    }
+
+    .writing-card-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .writing-card {
+        padding: 24px;
+        border-radius: 20px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .writing-card {
+        transition: none;
+    }
+
+    .writing-card:hover {
+        transform: none;
+    }
+}
+
+
+/* ============================================
+   WRITING — DARK MODE FLOATING CARD
+   ============================================ */
+
+/* Dark card background */
+.dark .writing-card {
+    background: #282B4C;
+    border-color: #414466;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode floating hover */
+.dark .writing-card:hover {
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.25);
+}
+
+/* Publication title and description */
+.dark .writing-publication-title {
+    color: #F7F5FF;
+}
+
+.dark .writing-description {
+    color: #E1DFF0;
+}
+
+/* Book icon */
+.dark .writing-card-icon {
+    background: #363B67;
+    color: #9BABFF;
+}
+
+
+/* ============================================
+   SECTION NUMBERS — ELECTRIC BLOOM
+   ============================================ */
+
+.skills-eyebrow,
+.projects-eyebrow,
+.writing-eyebrow,
+.contact-eyebrow {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+/* Slightly smaller on mobile */
+@media (max-width: 768px) {
+    .skills-eyebrow,
+    .projects-eyebrow,
+    .writing-eyebrow,
+    .contact-eyebrow {
+        font-size: 15px;
+    }
+}
